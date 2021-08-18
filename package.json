@@ -1,0 +1,35 @@
+{
+  "name": "api-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "jest --coverage",
+    "dev": "nodemon"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MariamAlshammari/api-server.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MariamAlshammari/api-server/issues"
+  },
+  "homepage": "https://github.com/MariamAlshammari/api-server#readme",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "jest": "^27.0.6",
+    "mariadb": "^2.5.4",
+    "mysql2": "^2.3.0",
+    "pg": "^8.7.1",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.6.5",
+    "sqlite3": "^5.0.2",
+    "supertest": "^6.1.6",
+    "tedious": "^11.4.0"
+  }
+}
