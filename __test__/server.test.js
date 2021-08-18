@@ -5,27 +5,27 @@ const {server} = require('../src/server');
 const request = supertest(server);
 
 describe('middleware server', () => {
-    it('shoud check every thing works successfully', async () => {
-        let param = '/';
-        let status = 200;
-        let text = 'Helloo World!, all working';
+    // it('shoud check every thing works successfully', async () => {
+    //     let param = '/';
+    //     let status = 200;
+    //     let text = 'Helloo World!, all working';
 
-        const response = await request.get(param);
+    //     const response = await request.get(param);
 
-        expect(response.status).toBe(status);
-        expect(response.text).toBe(text);
-    });
+    //     expect(response.status).toBe(status);
+    //     expect(response.text).toBe(text);
+    // });
     
 
-    it('shoud check the data it works successfully', async () => {
-        let param = '/food?name=mariam';
-        let status = 200;
+    // it('shoud check the data it works successfully', async () => {
+    //     let param = '/food?name=mariam';
+    //     let status = 200;
 
-        const response = await request.get(param);
+    //     const response = await request.get(param);
 
-        expect(response.status).toBe(status);
-        expect(typeof response.body).toEqual('object');
-    });
+    //     expect(response.status).toBe(status);
+    //     expect(typeof response.body).toEqual('object');
+    // });
 
     it('should check 500 errors', async () => {
         let param = '/bad';
