@@ -3,7 +3,7 @@
 const express=require('express');
 const app=express();
 
-const validatorMiddleware=require('./middleware/validator'); 
+// const validatorMiddleware=require('./middleware/validator'); 
 
 const loggerMiddleware=require('./middleware/logger');
 
