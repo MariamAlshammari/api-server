@@ -1,6 +1,7 @@
 const express=require('express');
 const router =express.Router();
 
+const {Clothes}=require('../models/index');
 
 // const {implementations}=require('../handlers/routers-implementation');
 
@@ -38,7 +39,7 @@ async function getClothesHandler(req,res){
    
 
     const id=parseInt(req.params.id)
-    let clothesType=await Clothes.get({where:{id: id}});
+    let clothesType=await Clothes.get(id);
     res.status(200).json(clothesType);
 
 }
@@ -47,14 +48,14 @@ async function updateClothes(req, res) {
     const id = parseInt(req.params.id);
     let clothesInfo = req.body;
 
-    let clothesType = await Clothes.update({ where: { id } });
-    let updateClothess = await clothesType.update(clothesInfo);
-    res.status(200).json(updateClothess);
+    let clothesType = await Clothes.update(id,clothesInfo);
+    // let updateClothess = await clothesType.update(clothesInfo);
+    res.status(200).json(clothesType);
 }
 
 async function deleteClothes(req, res) {
     const id = parseInt(req.params.id);
-    let deleteClothess = await Clothes.delete({ where: { id } });
+    let deleteClothess = await Clothes.delete(id);
     res.status(204).json(deleteClothess);
 }
 

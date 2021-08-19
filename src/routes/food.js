@@ -34,7 +34,7 @@ async function createFood(req,res){
 
 
 async function getAllFood(req, res) {
-    let all = await Food.findAll();
+    let all = await Food.getAll();
     res.status(200).json(all);
 }
 
@@ -44,7 +44,8 @@ async function getFoodHandler(req,res){
     //     res.status(200).json(output);
 
     const id=parseInt(req.params.id)
-    let foodType=await Food.get({where:{id: id}});
+    // console.log('hiiiiiiiiiiiiid',id);
+    let foodType=await Food.get(id);
     res.status(200).json(foodType);
 
 }
@@ -54,14 +55,14 @@ async function updateFood(req, res) {
     const id = parseInt(req.params.id);
     let foodInfo = req.body;
 
-    let foodType = await Food.update({ where: { id } });
-    let updateFoods = await foodType.update(foodInfo);
-    res.status(200).json(updateFoods);
+    let foodType = await Food.update(id,foodInfo);
+    // let updateFoods = await foodType.update(foodInfo);
+    res.status(200).json(foodType);
 }
 
 async function deleteFood(req, res) {
     const id = parseInt(req.params.id);
-    let deleteFoods = await Food.delete({ where: { id } });
+    let deleteFoods = await Food.delete(id);
     res.status(204).json(deleteFoods);
 }
 
